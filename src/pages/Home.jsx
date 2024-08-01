@@ -1,5 +1,6 @@
 import Hero from "../components/Hero";
 import Timeline from "../components/Timeline";
+import About from "../components/About";
 
 const Home = () => {
   return (
@@ -7,6 +8,7 @@ const Home = () => {
       <div className="max-w-7xl w-full">
         <Hero />
         <Timeline />
+        <About />
       </div>
     </main>
   );
