@@ -23,7 +23,7 @@ const SectionHeading = ({ text }) => {
   return (
     <motion.div
       ref={ref}
-      className="text-3xl md:text-5xl font-bold leading-tight"
+      className="text-2xl md:text-4xl font-bold leading-tight"
     >
       {letters.map((letter, index) => (
         <motion.span
