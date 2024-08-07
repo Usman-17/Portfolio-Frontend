@@ -4,7 +4,6 @@ import SectionHeading from "./SectionHeading";
 
 const Skills = () => {
   const { skills, error } = useGetAllSkills();
-  console.log(skills);
 
   if (error) {
     return (
@@ -19,7 +18,7 @@ const Skills = () => {
 
   return (
     <div className="sm:p-2 max-w-4xl mx-auto mt-24">
-      <SectionHeading text="Skills" />
+      {skills && <SectionHeading text="Skills" />}
 
       <div className="grid grid-cols-3 sm:grid-cols-5 gap-1 sm:gap-4">
         {skills?.map((skill, index) => (

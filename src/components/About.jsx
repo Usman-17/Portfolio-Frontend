@@ -24,7 +24,7 @@ const About = () => {
 
   return (
     <div className="sm:p-2 max-w-4xl mx-auto py-10">
-      <SectionHeading text="About Me" />
+      {user && <SectionHeading text="About Me" />}
 
       <div className="max-w-4xl mx-auto flex flex-col lg:flex-row items-center justify-between sm:gap-6">
         <div className="ml-2">

@@ -18,7 +18,7 @@ const Timeline = () => {
 
   return (
     <div className="p-4 max-w-4xl mx-auto">
-      <SectionHeading text="Timeline" />
+      {timelines && <SectionHeading text="Timeline" />}
 
       <div className="max-w-4xl mx-auto">
         <ol className="relative border-l border-gray-200 dark:border-gray-700">

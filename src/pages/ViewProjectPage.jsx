@@ -60,14 +60,24 @@ const ViewProjectPage = () => {
 
           <section className="mt-5">
             <section>
-              <h2 className="text-lg font-semibold text-white">Description:</h2>
+              {project && (
+                <h2 className="text-base sm:text-lg font-semibold text-white">
+                  Description:
+                </h2>
+              )}
+
               <p className="text-sm sm:text-base text-white-100 leading-tight">
                 {project?.description}
               </p>
             </section>
 
             <section className="pt-5">
-              <h2 className="text-lg font-semibold">Technologies:</h2>
+              {project && (
+                <h2 className="text-base sm:text-lg font-semibold">
+                  Technologies:
+                </h2>
+              )}
+
               <ul className="list-disc list-inside pl-5 text-gray-700">
                 {project?.technologies?.split(",").map((tech, index) => (
                   <li key={index} className="capitalize text-white-100">
@@ -78,18 +88,29 @@ const ViewProjectPage = () => {
             </section>
 
             <section className="pt-5">
-              <h2 className="text-lg font-semibold">Stack:</h2>
+              {project && (
+                <h2 className="text-base sm:text-lg font-semibold">Stack:</h2>
+              )}
+
               <p className="text-white-100 uppercase">{project?.stack}</p>
             </section>
 
             <section className="py-5">
-              <h2 className="text-lg font-semibold ">Deployed:</h2>
+              {project && (
+                <h2 className="text-base sm:text-lg font-semibold ">
+                  Deployed:
+                </h2>
+              )}
               <p className="text-white-100">{project?.deployed}</p>
             </section>
 
             {project?.gitRepoLink && (
               <section className="flex items-center space-x-2">
-                <h3 className="text-lg font-semibold">GitHub Repository:</h3>
+                {project && (
+                  <h3 className="text-base sm:text-lg font-semibold">
+                    GitHub Repository:
+                  </h3>
+                )}
                 <a
                   href={project.gitRepoLink}
                   target="_blank"
@@ -103,7 +124,12 @@ const ViewProjectPage = () => {
 
             {project?.projectLink && (
               <section className="flex items-center space-x-2">
-                <h3 className="text-lg font-semibold ">Project Link:</h3>
+                {project && (
+                  <h3 className="text-base sm:text-lg font-semibold ">
+                    Project Link:
+                  </h3>
+                )}
+
                 <a
                   href={project.projectLink}
                   target="_blank"

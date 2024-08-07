@@ -21,6 +21,7 @@ const Contact = () => {
     isLoading,
     isError,
     error,
+    isPending,
   } = useMutation({
     mutationFn: async (formData) => {
       const res = await fetch("/api/v1/enquiry/create", {
@@ -177,10 +178,11 @@ const Contact = () => {
         {/* Submit Button */}
         <div className="flex justify-end">
           <MagicButton
-            title="Submit"
+            title={isPending ? "Submitting..." : "Submit"}
             isLoading={isLoading}
-            icon={<Redo size={16} />}
+            icon={!isPending && <Redo size={16} />}
             position="right"
+            disabled={isLoading}
           />
         </div>
       </form>

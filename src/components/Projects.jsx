@@ -22,7 +22,8 @@ const Projects = () => {
 
   return (
     <div className="py-5 max-w-4xl mx-auto mt-10">
-      <SectionHeading text="Recent Projects" />
+      {projects && <SectionHeading text="Recent Projects" />}
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
         {projects.map((project, index) => (
           <InViewAnimation delay={index * 0.1} key={project?._id}>

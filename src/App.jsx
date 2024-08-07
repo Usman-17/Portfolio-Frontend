@@ -4,6 +4,7 @@ import { ThemeProvider } from "./ThemeProvider";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import ViewProjectPage from "./pages/ViewProjectPage";
 import { Toaster } from "react-hot-toast";
+import "./App.css";
 
 const App = () => {
   // Scroll to Top Component
@@ -26,24 +27,13 @@ const App = () => {
           <Route path="/:id" element={<ViewProjectPage />} />
         </Routes>
 
-        {/* <Toaster
-          toastOptions={{
-            style: {
-              background: "#363636",
-              color: "#fffbfb",
-              fontFamily: "poppins",
-              fontSize: "14px",
-            },
-          }}
-        /> */}
-
         <Toaster
           toastOptions={{
             style: {
-              background: "linear-gradient(90deg, #6a0dad, #8a2be2)", // Subtle purple gradient
+              background: "linear-gradient(90deg, #6a0dad, #8a2be2)",
               color: "#fffbfb",
               fontFamily: "Poppins",
-              fontSize: "14px",
+              fontSize: "13px",
             },
           }}
         />
