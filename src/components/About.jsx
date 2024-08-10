@@ -44,16 +44,18 @@ const About = () => {
 
           {/* Signature */}
           <div className="flex justify-end">
-            <motion.img
-              src={signature}
-              alt="Signature"
-              className="w-28 h-full opacity-15"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              loading="lazy"
-              decoding="async"
-            />
+            {user && (
+              <motion.img
+                src={signature}
+                alt="Signature"
+                className="w-28 h-full opacity-15"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+                loading="lazy"
+                decoding="async"
+              />
+            )}
           </div>
         </div>
 

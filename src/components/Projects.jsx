@@ -29,11 +29,17 @@ const Projects = () => {
           <InViewAnimation delay={index * 0.1} key={project?._id}>
             <div className="w-full max-w-full rounded-lg shadow overflow-hidden">
               <Link to={project?._id}>
-                <img
-                  className="w-full h-auto object-cover transition-transform duration-300 ease-in-out transform hover:scale-105"
-                  src={project?.projectImg?.url}
-                  alt={project?.title}
-                />
+                <div className="w-full">
+                  <img
+                    src={project?.projectImg?.url}
+                    alt={project?.title}
+                    className="w-full h-auto object-cover transition-transform duration-300 ease-in-out transform hover:scale-105"
+                    width="1200"
+                    height="800"
+                    decoding="async"
+                    loading="lazy"
+                  />
+                </div>
               </Link>
               <div className="sm:px-1 pb-2">
                 <Link to={project?._id}>
