@@ -6,11 +6,11 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,
-    proxy: {
-      "/api": {
-        target: "https://portfolio-backend-2nog.onrender.com",
-        changeOrigin: true,
-      },
-    },
+    // proxy: {
+    //   "/api": {
+    //     target: "https://portfolio-backend-2nog.onrender.com",
+    //     changeOrigin: true,
+    //   },
+    // },
   },
 });
