@@ -10,9 +10,7 @@ const useGetAllSkills = () => {
   } = useQuery({
     queryKey: ["skills"],
     queryFn: async () => {
-      const response = await fetch(
-        "https://portfolio-backend-2nog.onrender.com/api/v1/skill/all"
-      );
+      const response = await fetch("/api/v1/skill/all");
 
       if (!response.ok) {
         throw new Error("Failed to fetch skills");

@@ -10,9 +10,7 @@ const useGetUser = () => {
   } = useQuery({
     queryKey: ["user"],
     queryFn: async () => {
-      const response = await fetch(
-        "https://portfolio-backend-2nog.onrender.com/api/v1/user/me/portfolio"
-      );
+      const response = await fetch("/api/v1/user/me/portfolio");
 
       if (!response.ok) {
         throw new Error("Failed to fetch user");
