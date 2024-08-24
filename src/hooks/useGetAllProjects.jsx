@@ -10,9 +10,7 @@ const useGetAllProjects = () => {
   } = useQuery({
     queryKey: ["projects"],
     queryFn: async () => {
-      const response = await fetch(
-        "https://portfolio-backend-2nog.onrender.com/api/v1/project/all"
-      );
+      const response = await fetch("/api/v1/project/all");
 
       if (!response.ok) {
         throw new Error("Failed to fetch projects");
