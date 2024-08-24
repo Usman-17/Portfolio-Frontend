@@ -7,7 +7,7 @@ import { TrendingUp } from "lucide-react";
 import { useGetAllProjects } from "../hooks/useGetAllProjects";
 
 const Projects = () => {
-  const { projects = [], error } = useGetAllProjects();
+  const { projects, error } = useGetAllProjects();
 
   if (error) {
     return (
