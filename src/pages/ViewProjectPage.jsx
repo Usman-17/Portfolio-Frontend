@@ -70,7 +70,7 @@ const ViewProjectPage = () => {
               />
             </section>
 
-            <section className="mb-4 sm:mb-5">
+            <section className="mb-4 sm:mb-5 mt-5">
               {project && (
                 <h2 className="text-base sm:text-lg font-semibold">
                   Technologies
@@ -102,7 +102,7 @@ const ViewProjectPage = () => {
             </section>
 
             {project?.projectLink && (
-              <section className="mb-1 mt-5 sm:mt-3 flex gap-3 items-center">
+              <section className="mb-1 mt-5 sm:mt-4 flex gap-3 items-center">
                 <a
                   href={project.projectLink}
                   target="_blank"
@@ -119,7 +119,7 @@ const ViewProjectPage = () => {
             )}
 
             {project?.gitRepoLink && (
-              <section className="mb-2 flex gap-3 items-center">
+              <section className="mb-2 sm:mb-1 flex gap-3 items-center">
                 <a
                   href={project.gitRepoLink}
                   target="_blank"
