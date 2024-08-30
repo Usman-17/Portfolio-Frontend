@@ -70,7 +70,7 @@ const ViewProjectPage = () => {
               />
             </section>
 
-            <section className="pt-5">
+            <section className="mb-4 sm:mb-5">
               {project && (
                 <h2 className="text-base sm:text-lg font-semibold">
                   Technologies

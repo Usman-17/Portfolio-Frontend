@@ -59,7 +59,7 @@ const Projects = () => {
 
                       {/* Description */}
                       <div className="text-xs mt-1">
-                        <p
+                        <div
                           className="text-gray-400"
                           style={{
                             display: "-webkit-box",
@@ -67,9 +67,10 @@ const Projects = () => {
                             WebkitLineClamp: 2,
                             overflow: "hidden",
                           }}
-                        >
-                          {project?.description}
-                        </p>
+                          dangerouslySetInnerHTML={{
+                            __html: project?.description || "",
+                          }}
+                        />
                       </div>
                     </Link>
 
