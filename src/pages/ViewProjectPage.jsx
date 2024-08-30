@@ -54,12 +54,12 @@ const ViewProjectPage = () => {
           <img
             src={project?.projectImg?.url}
             alt={project?.title}
-            className="w-full h-auto rounded-lg shadow-lg object-cover"
+            className="w-full h-auto rounded-lg shadow-lg object-cover mb-2 sm:mb-4"
             loading="lazy"
             decoding="async"
           />
 
-          <section className="mt-5">
+          <section className="mb-4 sm:mb-3">
             <section>
               {project && (
                 <h2 className="text-xl font-bold text-white">Description</h2>
@@ -87,15 +87,15 @@ const ViewProjectPage = () => {
             </section>
 
             <section className="mb-0 sm:mb-1 flex items-center gap-1">
-              {project && <h2 className="text-lg font-semibold">Stack</h2>}
+              {project && <h2 className="text-lg font-semibold">Stack:</h2>}
 
               <p className="text-base sm:text-lg font-normal text-white-100 uppercase">
                 {project?.stack}
               </p>
             </section>
 
-            <section className="mb-2 sm:mb-3 flex items-center gap-1">
-              {project && <h2 className="text-lg font-semibold">Deployed</h2>}
+            <section className="mb-2 sm:mb-5 flex items-center gap-1">
+              {project && <h2 className="text-lg font-semibold">Deployed:</h2>}
               <p className="text-base sm:text-lg font-normal text-white-100">
                 {project?.deployed}
               </p>
