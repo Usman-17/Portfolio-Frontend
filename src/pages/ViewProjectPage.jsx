@@ -64,10 +64,10 @@ const ViewProjectPage = () => {
               {project && (
                 <h2 className="text-xl font-bold text-white">Description</h2>
               )}
-
-              <p className="text-sm sm:text-base text-white-100 leading-tight">
+              <div
+                className="mt-1 text-white-100 leading-tight "
                 dangerouslySetInnerHTML={{ __html: project?.description || "" }}
-              </p>
+              />
             </section>
 
             <section className="pt-5">
