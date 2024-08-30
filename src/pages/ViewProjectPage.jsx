@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
+import { ExternalLink } from "lucide-react";
 
 const ViewProjectPage = () => {
   const { id } = useParams();
@@ -61,24 +62,22 @@ const ViewProjectPage = () => {
           <section className="mt-5">
             <section>
               {project && (
-                <h2 className="text-base sm:text-lg font-semibold text-white">
-                  Description:
-                </h2>
+                <h2 className="text-xl font-bold text-white">Description</h2>
               )}
 
               <p className="text-sm sm:text-base text-white-100 leading-tight">
-                {project?.description}
+                dangerouslySetInnerHTML={{ __html: project?.description || "" }}
               </p>
             </section>
 
             <section className="pt-5">
               {project && (
                 <h2 className="text-base sm:text-lg font-semibold">
-                  Technologies:
+                  Technologies
                 </h2>
               )}
 
-              <ul className="list-disc list-inside pl-5 text-gray-700">
+              <ul className="mt-2 list-disc list-inside pl-3 text-gray-700">
                 {project?.technologies?.split(",").map((tech, index) => (
                   <li key={index} className="capitalize text-white-100">
                     {tech.trim()}
@@ -87,56 +86,51 @@ const ViewProjectPage = () => {
               </ul>
             </section>
 
-            <section className="pt-5">
-              {project && (
-                <h2 className="text-base sm:text-lg font-semibold">Stack:</h2>
-              )}
+            <section className="mb-0 sm:mb-1 flex items-center gap-1">
+              {project && <h2 className="text-lg font-semibold">Stack</h2>}
 
-              <p className="text-white-100 uppercase">{project?.stack}</p>
+              <p className="text-base sm:text-lg font-normal text-white-100 uppercase">
+                {project?.stack}
+              </p>
             </section>
 
-            <section className="py-5">
-              {project && (
-                <h2 className="text-base sm:text-lg font-semibold ">
-                  Deployed:
-                </h2>
-              )}
-              <p className="text-white-100">{project?.deployed}</p>
+            <section className="mb-2 sm:mb-3 flex items-center gap-1">
+              {project && <h2 className="text-lg font-semibold">Deployed</h2>}
+              <p className="text-base sm:text-lg font-normal text-white-100">
+                {project?.deployed}
+              </p>
             </section>
-
-            {project?.gitRepoLink && (
-              <section className="flex items-center space-x-2">
-                {project && (
-                  <h3 className="text-base sm:text-lg font-semibold">
-                    GitHub Repository:
-                  </h3>
-                )}
-                <a
-                  href={project.gitRepoLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-white-100"
-                >
-                  {project.gitRepoLink}
-                </a>
-              </section>
-            )}
 
             {project?.projectLink && (
-              <section className="flex items-center space-x-2">
-                {project && (
-                  <h3 className="text-base sm:text-lg font-semibold ">
-                    Project Link:
-                  </h3>
-                )}
-
+              <section className="mb-1 mt-5 sm:mt-3 flex gap-3 items-center">
                 <a
                   href={project.projectLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800"
+                  className="text-white hover:text-blue-800 hover:underline"
                 >
-                  {project.projectLink}
+                  {project && (
+                    <h3 className="text-base font-semibold flex items-center gap-1">
+                      View Project <ExternalLink size={16} />
+                    </h3>
+                  )}
+                </a>
+              </section>
+            )}
+
+            {project?.gitRepoLink && (
+              <section className="mb-2 flex gap-3 items-center">
+                <a
+                  href={project.gitRepoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-blue-800 hover:underline"
+                >
+                  {project && (
+                    <h3 className="text-base font-semibold flex items-center gap-1">
+                      View GitHub Repo <ExternalLink size={16} />
+                    </h3>
+                  )}
                 </a>
               </section>
             )}
